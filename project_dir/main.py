@@ -1,6 +1,7 @@
 from scrapy_plus.core.engine import Engine
-
+from spiders import BaiduSpider
 
 if __name__ == '__main__':
-    engine = Engine()
+    spider = BaiduSpider()
+    engine = Engine(spider)
     engine.start()
