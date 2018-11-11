@@ -25,8 +25,8 @@ class DoubanSpider(Spider):
             data = {}
             data['movie_name'] = a.xpath('./span[1]/text()')[0]
             data['movie_url'] = a.xpath('./@href')[0]
-            print(data)
-            # yield Item(data)
-        return Item(response.url)
+            # print(data)
+            yield Item(data)
+        # return Item(response.url)
 
 
