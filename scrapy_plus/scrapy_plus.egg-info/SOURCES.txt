@@ -1,0 +1,16 @@
+setup.py
+core/__init__.py
+core/downloader.py
+core/engine.py
+core/pipeline.py
+core/scheduler.py
+core/spider.py
+http1/__init__.py
+http1/request.py
+http1/response.py
+scrapy_plus.egg-info/PKG-INFO
+scrapy_plus.egg-info/SOURCES.txt
+scrapy_plus.egg-info/dependency_links.txt
+scrapy_plus.egg-info/not-zip-safe
+scrapy_plus.egg-info/requires.txt
+scrapy_plus.egg-info/top_level.txt
