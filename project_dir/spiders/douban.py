@@ -5,6 +5,8 @@ from scrapy_plus.item import Item
 
 class DoubanSpider(Spider):
 
+    name = "douban"
+
     def start_request(self):
         """
         :return: 够在初始化对象并返回
@@ -26,7 +28,17 @@ class DoubanSpider(Spider):
             data['movie_name'] = a.xpath('./span[1]/text()')[0]
             data['movie_url'] = a.xpath('./@href')[0]
             # print(data)
-            yield Item(data)
+            # yield Item(data)
+            yield Request(data['movie_url'], callback=self.parse_detail, meta={'data': data} )
+            # yield Item(data)
         # return Item(response.url)
+
+    def parse_detail(self,response):
+        """解析详情页数据"""
+        data = response.meta['data']
+        # print(data)
+        data['movie_length'] = response.xpath('//span[@property="v:runtime"]/text()')[0]
+        print(data)
+        yield Item(data)
 
 
