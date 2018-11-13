@@ -1,6 +1,9 @@
 from scrapy_plus.core.engine import Engine
 from spiders.baidu import BaiduSpider
 from spiders.douban import DoubanSpider
+from spiders.pipelines import BaiduPipline
+from spiders.pipelines import DoubanPipline
+
 
 
 if __name__ == '__main__':
@@ -11,5 +14,10 @@ if __name__ == '__main__':
         BaiduSpider.name:baidu_spider,
         DoubanSpider.name:douban_spider
     }
-    engine = Engine(spiders)
+    pipelines = [
+        BaiduPipline(),
+        DoubanPipline()
+    ]
+
+    engine = Engine(spiders,pipelines)
     engine.start()
