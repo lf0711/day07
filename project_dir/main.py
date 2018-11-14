@@ -3,6 +3,8 @@ from spiders.baidu import BaiduSpider
 from spiders.douban import DoubanSpider
 from spiders.pipelines import BaiduPipline
 from spiders.pipelines import DoubanPipline
+from middlewares.spider_middlewares import TestSpiderMiddleware1,TestSpiderMiddleware2
+from middlewares.downloader_middlewares import TestDownloaderMiddleware1,TestDownloaderMiddleware2
 
 
 
@@ -18,6 +20,8 @@ if __name__ == '__main__':
         BaiduPipline(),
         DoubanPipline()
     ]
+    spider_mids = [TestSpiderMiddleware1(),TestSpiderMiddleware2()]
+    downloader_mids = [TestDownloaderMiddleware1(),TestDownloaderMiddleware2()]
 
-    engine = Engine(spiders,pipelines)
+    engine = Engine(spiders,pipelines=pipelines,spider_mids=spider_mids,downloader_mids=downloader_mids)
     engine.start()
