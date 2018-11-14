@@ -9,13 +9,13 @@ from spiders.douban import DoubanSpider
 
 
 if __name__ == '__main__':
-    baidu_spider = BaiduSpider()
-    douban_spider = DoubanSpider()
-    #
-    spiders = {
-        BaiduSpider.name:baidu_spider,
-        DoubanSpider.name:douban_spider
-    }
+    # baidu_spider = BaiduSpider()
+    # douban_spider = DoubanSpider()
+    # #
+    # spiders = {
+    #     BaiduSpider.name:baidu_spider,
+    #     DoubanSpider.name:douban_spider
+    # }
     # pipelines = [
     #     BaiduPipline(),
     #     DoubanPipline()
@@ -23,5 +23,5 @@ if __name__ == '__main__':
     # spider_mids = [TestSpiderMiddleware1(),TestSpiderMiddleware2()]
     # downloader_mids = [TestDownloaderMiddleware1(),TestDownloaderMiddleware2()]
 
-    engine = Engine(spiders)
+    engine = Engine()
     engine.start()
