@@ -29,8 +29,8 @@ class DoubanSpider(Spider):
             data['movie_url'] = a.xpath('./@href')[0]
             # print(data)
             # yield Item(data)
-            yield Request(data['movie_url'], callback=self.parse_detail, meta={'data': data} )
-            # yield Item(data)
+            # yield Request(data['movie_url'], callback=self.parse_detail, meta={'data': data} )
+            yield Item(data)
         # return Item(response.url)
 
     def parse_detail(self,response):

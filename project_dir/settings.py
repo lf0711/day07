@@ -15,13 +15,13 @@ PIPELINES = [
 ]
 
 # 配置要启动下载器中间件
-# DOWNLOADER_MIDDLEWARES = [
-#     'middleware.downloader_middleware.DownloaderMiddleware1',
-#     'middleware.downloader_middleware.DownloaderMiddleware2'
-# ]
-#
-# # 配置要启动爬虫中间件
-# SPIDER_MIDDLEWARES = [
-#     'middleware.spider_middleware.SpiderMiddleware1',
-#     'middleware.spider_middleware.SpiderMiddleware2'
-# ]
+DOWNLOADER_MIDDLEWARES = [
+    'middleware.downloader_middleware.DownloaderMiddleware1',
+    'middleware.downloader_middleware.DownloaderMiddleware2'
+]
+
+# 配置要启动爬虫中间件
+SPIDER_MIDDLEWARES = [
+    'middleware.spider_middleware.SpiderMiddleware1',
+    'middleware.spider_middleware.SpiderMiddleware2'
+]

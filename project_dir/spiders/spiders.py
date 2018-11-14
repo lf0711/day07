@@ -6,6 +6,6 @@ class BaiduSpider(Spider):
     start_urls = [
         'http://www.baidu.com',
         'http://www.hao123.com',
-        'https://www.cnblogs.com'
+        # 'https://www.cnblogs.com'
     ]
 
